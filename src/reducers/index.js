@@ -5,8 +5,8 @@ export const initialState = {
 
 export const titleReducer = (state, action) => {
   switch (action.type) {
-    // case "CHANGE_TITLE":
-    //   return ;
+    case "CHANGE_TITLE":
+      return { ...state, title: action.payload, editing: false };
     case "CHANGE_EDIT":
       return { ...state, editing: true };
     default:

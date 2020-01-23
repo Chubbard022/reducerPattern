@@ -10,12 +10,18 @@ const Title = () => {
   const [state, dispatch] = useReducer(titleReducer, initialState);
 
   console.log("==>", state);
-  // const handleChanges = e => {
-  //   setNewTitleText(e.target.value);
-  // };
+  const handleChanges = e => {
+    setNewTitleText(e.target.value);
+  };
+
   const editTitle = e => {
     dispatch(editAction);
   };
+
+  const changeTitle = e => {
+    dispatch({ type: "CHANGE_TITLE", payload: newTitleText });
+  };
+
   return (
     <div>
       {!state.editing ? (
@@ -30,7 +36,7 @@ const Title = () => {
             name="newTitleText"
             value={newTitleText}
           />
-          <button>Update title</button>
+          <button onClick={changeTitle}>Update title</button>
         </div>
       )}
     </div>
