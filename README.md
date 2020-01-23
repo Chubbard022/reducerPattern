@@ -1,2 +1,0 @@
-# reducerPattern
-Created with CodeSandbox
